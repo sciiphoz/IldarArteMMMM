@@ -17,22 +17,22 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <WrapPanel Grid.Row="0">
+        <WrapPanel Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="225,52,0,0">
             <Label Content="Введите фамилию продавца" Width="250" />
             <TextBox x:Name="cashier" Width="100"/>
         </WrapPanel>
 
-        <WrapPanel Grid.Row="0" Margin="0,30,0,179" Grid.RowSpan="2">
+        <WrapPanel Grid.Row="0" Margin="225,91,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left">
             <Label Content="Введите дату приема на работу" Width="250" />
             <TextBox x:Name="date" Width="100"/>
         </WrapPanel>
 
-        <WrapPanel Grid.Row="0" Margin="0,60,0,149" Grid.RowSpan="2">
+        <WrapPanel Grid.Row="0" Margin="225,129,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left">
             <Label Content="Введиту среднюю дневную выручку" Width="250" />
-            <TextBox x:Name="sum" Width="100"/>
+            <TextBox x:Name="revenue" Width="100"/>
         </WrapPanel>
 
-        <Button x:Name="getresult" Grid.Row="1" Content="Рассчитать комиссионые" Margin="50,85,50,85" Click="getresult_Click">
+        <Button x:Name="getresult" Grid.Row="1" Content="Рассчитать комиссионые" Margin="50,43,50,127" Click="getresult_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -40,9 +40,15 @@
             </Button.Resources>
         </Button>
 
-        <Border BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.Column="1" Margin="50,85,50,85">
-            <TextBlock x:Name="result" Margin="50,85,50,85" TextAlignment="Center"/>
-        </Border>
+        <Button x:Name="table" Grid.Row="1" Content="Просмотреть таблицу" Margin="250,129,250,41" Click="opentable_Click" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" x:Name="result" Margin="50,85,50,85" TextAlignment="Center"/>
 
     </Grid>
 </Window>
